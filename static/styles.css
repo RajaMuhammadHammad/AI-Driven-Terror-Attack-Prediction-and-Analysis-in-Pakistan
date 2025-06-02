@@ -1,0 +1,132 @@
+/* styles.css */
+
+body {
+  background: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+  background: linear-gradient(135deg, #4a90e2 0%, #50e3c2 100%);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+}
+header h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+header p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+main {
+  max-width: 1000px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+.feature-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 36px rgb(0 0 0 / 0.15);
+}
+.feature-icon {
+  font-size: 4rem;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+.feature-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.accuracy-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+.accuracy-list li {
+  margin-bottom: 0.4rem;
+}
+.btn-feature {
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  padding: 0.6rem 1.6rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: white;
+  background-color: #4a90e2;
+  border: none;
+  display: inline-block;
+}
+.btn-feature:hover {
+  background-color: #357abd;
+  color: white;
+  text-decoration: none;
+}
+.llm-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+.llm-section h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+.llm-section a.btn {
+  background-color: #50e3c2;
+  color: #222;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 0.7rem 2rem;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 15px rgb(80 227 194 / 0.4);
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.llm-section a.btn:hover {
+  background-color: #39c6a1;
+  color: #111;
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

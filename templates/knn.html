@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KNN Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/knn_prediction.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background-wrapper">
+        <div class="container py-5">
+            <div class="form-box shadow-lg p-4 bg-white rounded">
+                <h2 class="text-center mb-4 text-success">KNN Attack Prediction</h2>
+
+                <form action="/predict_knn" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Year</label>
+                        <select name="Year" class="form-select" required>
+                            {% for y in range(2000, 2026) %}
+                                <option value="{{ y }}">{{ y }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Month</label>
+                        <select name="Month" class="form-select" required>
+                            {% set months = ['January', 'February', 'March', 'April', 'May', 'June',
+                                             'July', 'August', 'September', 'October', 'November', 'December'] %}
+                            {% for i in range(12) %}
+                                <option value="{{ i + 1 }}">{{ months[i] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Province</label>
+                        <select name="Province" class="form-select" required>
+                            {% set provinces = ['North-West Frontier Province', 'Punjab', 'Islamabad Capital Territory',
+                                'Sindh', 'Federally Administered Tribal Areas', 'Balochistan',
+                                'Khyber Pakhtunkhwa', 'Azad Kashmir', 'Gilgit-Baltistan'] %}
+                            {% for p in provinces %}
+                                <option value="{{ p }}">{{ p }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Weapon Type</label>
+                        <input type="text" name="Weapon_type" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Group</label>
+                        <input type="text" name="Group" class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">Predict</button>
+                    <a href="/" class="btn btn-primary mt-3">← Back to Home</a>
+                </form>
+
+                {% if prediction_result %}
+                    <div class="alert alert-info mt-4 text-center">
+                        <strong>Prediction:</strong> {{ prediction_result }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
